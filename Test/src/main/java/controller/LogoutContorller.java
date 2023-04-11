@@ -22,9 +22,6 @@ public class LogoutContorller extends HttpServlet {
 		session.invalidate();
 
 		resp.sendRedirect("./login");
-		
-//		req.getRequestDispatcher("./login").forward(req, resp);
-	
 	
 	}
 	

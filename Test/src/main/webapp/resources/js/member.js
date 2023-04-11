@@ -34,7 +34,7 @@ function validate() {
 	var idReg = /^[a-zA-Z0-9]{5,20}$/
 	if(!idReg.test($("#userid").val())) {
 		
-		$("#uid_msg").html("아이디는 5~20자의 영대소문자, 숫자만 가능합니다")
+		$("#userid_msg").html("아이디는 5~20자의 영대소문자, 숫자만 가능합니다")
 		return false
 		
 	}

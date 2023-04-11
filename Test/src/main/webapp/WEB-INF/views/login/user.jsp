@@ -14,7 +14,7 @@
 <p>안녕하세요 <%=session.getAttribute("userid") %>(<%=session.getAttribute("username") %>)님</p>
 
 <a href="./logout"><button>로그아웃</button></a>
-<button>회원정보 수정</button>
+<a href="./edit"><button>회원정보 수정</button></a>
 
 </body>
 </html>

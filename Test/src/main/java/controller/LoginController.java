@@ -45,16 +45,22 @@ public class LoginController extends HttpServlet {
 		
 		System.out.println("컨트롤러쪽 result : " + result);
 		
-		req.getRequestDispatcher("/WEB-INF/views/login/user.jsp").forward(req, resp);
+		if(result!=null) {
+			
+			//세션
+			HttpSession session = req.getSession();
+			
+			session.setAttribute("userno", result.getUserno());
+			session.setAttribute("userid", result.getUserid());
+			session.setAttribute("username", result.getUsername());
+			
+			resp.sendRedirect("./user");
+			
+		} else {
+			resp.sendRedirect("./login");
+		}
+		
 
-		//세션
-		HttpSession session = req.getSession();
-		
-		session.setAttribute("userno", result.getUserno());
-		session.setAttribute("userid", result.getUserid());
-		session.setAttribute("username", result.getUsername());
-		
-		resp.sendRedirect("./user");
 		
 //		넘버 아이디 네ㅔ임
 //		보여줄건 아이디 네임
